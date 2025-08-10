@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="contact .css">
+  <title>Contact & Operating Hubs - Hunter Marine</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #224b6c;
+    }
+
+    /* === Contact Section === */
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch; /* Same height form & image */
+      padding: 40px;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    .contact-form {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .contact-form h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      border: none;
+      outline: none;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      font-size: 16px;
+      color: #224b6c;
+      width: 100%;
+      resize: none;
+    }
+
+    .full-width {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .send-button {
+      background-color: #224b6c;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .send-button:hover {
+      background-color: #1a3c5a;
+    }
+
+    .contact-image {
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start; /* Align top with form */
+    }
+
+    .contact-image img {
+      height: 100%;
+      width: auto;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    /* === Contact Info Boxes === */
+    .contact-info {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding: 20px 40px;
+      gap: 20px;
+    }
+
+    .info-box {
+      background-color: #224b6c;
+      color: #fff;
+      padding: 20px;
+      width: 220px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .info-box:nth-child(3) {
+      background-color: #f2f2f2;
+      color: #224b6c;
+    }
+
+    .info-box i {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    /* === Operating Hubs Section === */
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .locations {
+      display: inline-block;
+      background-color: #224b6c;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .map-container {
+      position: relative;
+      display: block;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .map-container img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    .map-pin {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #224b6c;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 14px;
+      cursor: default;
+    }
+
+    .pin-chennai { top: 54%; left: 63%; }
+    .pin-madurai { top: 58%; left: 62%; }
+    .pin-tuticorin { top: 62%; left: 60.5%; }
+
+    .map-pin:hover::after {
+      content: attr(data-title);
+      position: absolute;
+      top: -25px;
+      background-color: #224b6c;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .contact-form {
+        max-width: 500px;
+      }
+
+      .form-row {
+        flex-direction: column;
+      }
+
+      .contact-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .contact-image img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+
+      .info-box {
+        width: 90%;
+        max-width: 300px;
+      }
+
+      .map-pin {
+        font-size: 12px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+          <!-- Hero Section with Navbar -->
+  <section class="hero-bg-section">
+    <div class="hero-content">
+      <!-- Header/Navbar -->
+      <header class="header">
+        <div class="logo">
+          <img src="/images/logo/HMES.png" alt="Hunter Marine Engineering Logo">
+        </div>
+         <div class="nav-search-wrapper">
+      <nav>
+  <ul>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="about.html">ABOUT US</a></li>
+    <li><a href="divisions.html">DIVISIONS</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+</nav>
+
+
+      <div class="search-bar">
+        <input type="text" placeholder="SEARCH" />
+        <button><i class="fa fa-search"></i></button>
+      </div>
+    
+      </header>
+      <!-- Hero Text Content -->
+      <div class="hero-row">
+        <div class="hero-left">
+          <h1>GET IN TOUCH WITH HUNTER <br>MARINE ENGINEERING</h1>
+          <div class="goals">
+            <b>We’re here to answer your questions, provide<br> expert support and deliver dependable <br>marine solutions — wherever you are.</b>
+           
+          </div>
+          <button class="cta-btn">
+            EXPLORE OUR SERVICES
+            <span><i class="fa fa-arrow-up-right-from-square"></i></span>
+          </button>
+        </div>
+        <!-- No right image: background image is handled in CSS -->
+      </div>
+    </div>
+  </section> 
+
+<br>
+
+
+      
+  <!-- Contact Section -->
+  <section class="contact-container">
+    <div class="contact-form">
+      <h2>GET IN TOUCH</h2>
+      <div class="form-row">
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Your Phone Number">
+      </div>
+      <input type="email" placeholder="Your Email" class="full-width">
+      <textarea rows="4" placeholder="Your Message" class="full-width"></textarea>
+      <button class="send-button">Send Message</button>
+    </div>
+
+    <div class="contact-image">
+      <img src="images/360_F_1144285619_b5YZgdE9bTm0QmxRdCTAdOYyB0VAkGrJ.jpg" alt="Ship Image" />
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="contact-info">
+    <div class="info-box">
+      <i>📞</i>
+      <p>+91 8220865106</p>
+    </div>
+    <div class="info-box">
+      <i>✉️</i>
+      <p>purchase@huntermarine.in<br>info@huntermarine.in</p>
+    </div>
+    <div class="info-box">
+      <i>📍</i>
+      <p>CHENNAI<br>INDIA</p>
+    </div>
+  </section>
+
+  <!-- Operating Hubs Section -->
+  <div class="section-title">OPERATING HUBS</div>
+  <div class="locations">CHENNAI · MADURAI · TUTICORIN</div>
+
+  <div class="map-container">
+    <img src="images/ChatGPT Image Jun 4, 2025, 01_12_35 PM.png" alt="World Map" />
+    <div class="map-pin pin-chennai" data-title="Chennai">📍</div>
+    <div class="map-pin pin-madurai" data-title="Madurai">📍</div>
+    <div class="map-pin pin-tuticorin" data-title="Tuticorin">📍</div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/images/logo/logo_white_text.png" alt="Hunter Marine Engineering Logo">
+       <div class="footer-contacts">
+  <div><i class="fa fa-phone"></i> 
+    <a href="tel:+918220865106">+91 8220865106</a>
+  </div>
+  <div><i class="fa fa-envelope"></i> 
+    <a href="mailto:info@huntermarine.in">info@huntermarine.in</a>
+  </div>
+</div>
+
+         <span>FOLLOW NOW </span>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-nav">
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT US</a>
+  <a href="services.html">SERVICES</a>
+  <a href="contact.html">CONTACT</a>
+</div>
+
+        <div class="footer-subscribe">
+          <span>SUBSCRIBE NOW</span>
+           <span>ENTER YOUR EMAIL  </span>
+          <div class="subscribe-box underline-style">
+          <input type="email" placeholder="">
+          <button>Subscribe</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="underline-line"></div>
+
+  </footer>
+
+
+</body>
+</html>
