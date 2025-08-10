@@ -392,7 +392,7 @@ body {
   position: relative;
 }
 .quality-policy-bg {
-  background: url('/images/Gemini_Generated_Image_xo2esexo2esexo2e.png') center/cover no-repeat;
+  background: url('images/Gemini_Generated_Image_xo2esexo2esexo2e.png') center/cover no-repeat;
   min-height: 300px;
   position: relative;
   display: flex;
@@ -898,3 +898,4 @@ body {
     font-size: 13px;
   }
 }
+
